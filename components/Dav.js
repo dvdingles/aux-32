@@ -6,9 +6,60 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/3D GINEBRA.gltf");
+  const { nodes, materials } = useGLTF("/4D GINEBRA.gltf");
   return (
     <group {...props} dispose={null}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano001.geometry}
+        material={materials["Material.001"]}
+        position={[-0.15, 0.1, 0.12]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano002.geometry}
+        material={materials["Material.001"]}
+        position={[-0.15, 0.1, 0.12]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano003.geometry}
+        material={materials["Material.001"]}
+        position={[-0.39, -0.02, 0.35]}
+        rotation={[0, -Math.PI / 2, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto.geometry}
+        material={materials["Material.001"]}
+        position={[0.02, -0.11, 0.22]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={0.5}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto001.geometry}
+        material={materials["Material.001"]}
+        position={[-0.22, -0.11, 0.49]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={0.5}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto002.geometry}
+        material={materials["Material.001"]}
+        position={[-0.42, -0.03, 0.4]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={0.5}
+      />
       <group position={[0.23, -0.03, -0.01]} rotation={[0, 0, Math.PI]}>
         <mesh
           castShadow
@@ -73,4 +124,4 @@ export function Dav(props) {
   );
 }
 
-useGLTF.preload("/3D GINEBRA.gltf");
+useGLTF.preload("/4D GINEBRA.gltf");
